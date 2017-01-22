@@ -1,0 +1,37 @@
+Good evening everyone, and welcome to the first B2GS Meet-up of 2017. Tonight I'm going to reveal to you the magic behind Groovy MetaProgramming. 
+
+Metaprogramming is a programming technique in which computer programs have the ability to treat programs as their data. It means that a program could be designed to read, generate, analyze or transform other programs, and even modify itself while running.
+-https://en.wikipedia.org/wiki/Metaprogramming
+
+So for me this means that Metaprogramming is power, and we all know the Ben Parker's speech... However many people see Metaprogramming as magic, and as programmers, developer, engineers, we tend not to like magic, because it can be hard to debug, when something disappears, and you don't know how to get it back... unless some one lets you in on the secret. So What I'm hoping, is after tonight, you just see Metaprogramming, as another paradigm, a way of programming, but you use the power responsibly.
+
+In this talk I'm going to focus on Runtime Metaprogramming, but touching on some compile-time aspects.
+
+Lets start with categories, I'm not going to spend that much time... on them, because they are of limited scope, but there are a few things to see in this example. As you can see by using the TimeCategory, you get a localized DSL that you can use for manipulating numbers into dates. Looking as some of the source you can see one of the techniques that they use, Operator overloading. All the operators in Groovy have a corresponding method name, that can be overridden in a class. This is very powerful, and I don't suggest you use it, unless you have a really good reason for it, but feel free to use those that are built into the language like for BigDecimal. [demo]
+
+Moving on to MetaClass. MetaClass is one of the work horses in Groovy MetaProgramming, it's essentially reflection, but with a much better API. It allows you to introspect your code. It also allows you to add new methods, and properties to existing Groovy code at an object or instance level. [demo]
+
+Expandos are like an object that extends the idea of adding methods and properties, so that you can just add them without using metaClass, because the Expando hides that underneath. Expandos can be useful for mocking services, if you're not doing typing.[demo]
+Alternative to Expandos are using maps [:] in conjunction with the 'as' operator, and you can use this for mocking objects that are statically typed. [demo]
+
+Expandos and Map as, are commonly used in the underlying of groovy mocking/stubbing classes, although if you use them in this way be careful of the method signature, the arguments, otherwise what you think should happen might not. Also you can set beak points in the closures so that you can  actually debug the additional methods you created/overwrote
+
+If you've used Groovy for a while you'll know that Closures can be powerful, in things like each, collect, etc, however their super power lies in their delegate. So what this is in the ability to set the class to delegate calls, that it can't handle to another class. You may have seen something like this before in JS, However in Groovy you get the scope you defined the closure in and a delegate, plug you can modify is the closure looks at either first or exclusively. The power of the delegate is often used for DSLs.  There is an AST Transform @DelegatesTo, which you can apply to a methods parameter, that is a closure, that will give you IDE support for what gets put into that closure.[demo]
+
+GDSL, is a groovy DSL that you can include that gives your users, of you're metaprogramming support in Intellij. There in a DSL for Eclipse, but it's harder to find documentation for.[demo later]
+
+So like with closures there is an AST Transform @Delegate, for properties in classes that allow you to delegate. This was The first way that you get get something like multiple inheritance, in Groovy, before Traits were a thing.  What this will do is get all the methods from the delegate at compile time and add them to the class, if they don't already exist. This means it avoid the diamond problem, by taking the first implementation. So this is taken from a Venkat Subramaniam, Where he says, something, like you read a book, about design patterns, delegation is better then inheritance for code reuse, but because you're coming from a Java mindset, where delegation sucks, you use inheritance instead.[demo] 
+
+Traits are like mixins, and replace Groovy's older mixins, which are deprecated. This allows you to define traits, similar to an interface with default methods, but you can also have properties with state. Traits are compile time, but can be applied during runtime.[demo]
+
+methodMissing/propertyMissing/invokeMethod are the power methods, that really enable you to create DSLs in Groovy.[demo]
+
+DSL [demo]
+
+Compilation customizers [demo]
+
+Extension Methods are similar to categories but not. They allow you to add methods to classes like the GDK add methods to classes. So for example rather than adding a StringUtil class, you can add those methods directly to the String class, and this happens at compile time.
+
+AST Transforms are Groovy's compile time programing. These give you a lot of power, without the dynamic performance hit. AST Transforms are similar to C/Lisp Macros. There are a bunch of them built in that you can take advantage of. Now using these annotations might seem a bit magical, but you can see what the transforms are doing, by opening up the Groovy console, and using the inspect AST option[demo]
+
+I'm not going to go over writing AST Transforms, as it's a whole topic onto itself, but you can take a look at my Enforcer plugin for some examples. AST transforms modify code at compile time, manipulating the AST created by ATLR and the Groovy Compiler, so it takes a different mind set to create these transforms. In the future Groovy is adding Macros, which will make creating AST Transforms a bit easier. 

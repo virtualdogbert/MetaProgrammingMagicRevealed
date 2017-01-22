@@ -1,0 +1,44 @@
+ ☐ Announcements (ctrl + d)
+   ☐ @B2GSMeetup
+   ☐ Thank Host
+   ☐ Speakers
+   ☐ Annoucements from the floor?
+   ☐ Links:
+     https://github.com/virtualdogbert/Groovy_Links
+     http://groovy-lang.org/metaprogramming.html
+ ☐ Magic's Biggest Secrets Finally Revealed: Groovy Metaprograming
+ Tucker Pelletier aka virtualdogbert virtualdogbert@gmail.com
+ ☐ Metaprogramming is a programming technique in which computer programs have the ability to treat programs as their data. It means that a program could be designed to read, generate, analyze or transform other programs, and even modify itself while running. -https://en.wikipedia.org/wiki/Metaprogramming
+ ☐ Categories
+ ☐ metaClass
+ ☐ Expandos
+ ☐ [:] as Object
+ ☐ methodMissing/propertyMissing
+ ☐ invokeMethod
+ ☐ {} delegate
+  ☐ '@DelegatesTo'
+  ☐ GDSL 
+    http://www.tothenew.com/blog/gdsl-awesomeness-introduction-to-gdsl-in-intellij-idea/
+    https://confluence.jetbrains.com/display/GRVY/Scripting+IDE+for+DSL+awareness
+    https://intellij-support.jetbrains.com/hc/en-us/community/posts/203366410-Can-I-use-GDSL-with-Groovy-AST-transforms-that-have-closures-as-parameters-
+ ☐ DSLD
+   https://github.com/groovy/groovy-eclipse/wiki/DSLD-examples
+   https://github.com/groovy/groovy-eclipse/tree/master/base/org.codehaus.groovy18/plugin_dsld_support/dsld
+   https://spring.io/blog/2011/05/09/better-dsl-support-in-groovy-eclipse
+   https://spring.io/blog/2011/08/02/debugging-dsld-scripts
+   https://dzone.com/articles/add-editor-support-to-your-groovy-builder-with-a-d
+ ☐ '@Delegate'
+ ☐ traits/mixins
+ ☐ DSL
+  ☐ Compilation customizers
+ ☐ Extension Methods
+ ☐ AST
+  ☐ Built in Examples
+    http://groovy-lang.org/metaprogramming.html#_available_ast_transformations
+  ☐ GroovyConsole
+  ☐ Enforcer Example
+    https://github.com/virtualdogbert/Enforcer/tree/master/src/main/groovy/com/virtualdogbert/ast
+    https://github.com/virtualdogbert/testAst
+  ☐ Macros
+    https://github.com/bsideup/MacroGroovy 
+    a feature coming to Groovy in a future release came from this side project.
