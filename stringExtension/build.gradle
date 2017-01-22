@@ -1,0 +1,29 @@
+import org.apache.tools.ant.filters.ReplaceTokens
+
+apply plugin: 'groovy'
+apply plugin: 'maven'
+
+group = "org.virtualdogbert"
+version = "0.1"
+description = "An example groovy extention"
+
+repositories {
+    jcenter()
+    mavenLocal()
+       mavenCentral()
+}
+
+
+dependencies {
+    compile 'org.codehaus.groovy:groovy-all:2.4.8'
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '3.1'
+}
+
+processResources {
+    from(sourceSets.main.resources.srcDirs) {
+        filter(ReplaceTokens, tokens: [ version: project.version ])
+    }
+}

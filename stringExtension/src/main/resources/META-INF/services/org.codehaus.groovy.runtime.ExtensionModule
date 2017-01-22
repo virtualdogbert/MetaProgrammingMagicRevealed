@@ -1,0 +1,4 @@
+moduleName = GroovyStringEncryptionExtension
+moduleVersion = @version@
+extensionClasses = org.virtualdogbert.EncryptionExtension
+staticExtensionClasses =
