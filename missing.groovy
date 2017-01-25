@@ -38,18 +38,14 @@ class Missing extends Expando{
         return this."$propertyName"
     }
 
-    def test(){
-        println "testing"
-    }
-
 }
 
 def missing = new Missing()
-println missing.pi
-println missing.pi
-println missing.Life_Universe_Everything
-//println missing.pa
-println missing.add(1,1)
-println missing.add(1,2)
-missing.test()
-println missing.foo(1,2)
+
+// println missing.add(1,1)
+// println missing.add(1,2)
+// println missing.pi
+// println missing.pi
+// println missing.Life_Universe_Everything
+// println missing.pa
+// println missing.foo(1,2)

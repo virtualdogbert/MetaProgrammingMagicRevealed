@@ -1,23 +1,23 @@
 //http://docs.groovy-lang.org/latest/html/api/groovy/lang/MetaClass.html
 def someService = new Object()
 
-// someService.notAMethod()
-//someService.notAProperty
-//someService.metaClass.aMethod = {String s -> println s}
-// someService.metaClass.static.aStaticMethod = {String s -> println s + ' statically!'}
-// someService.metaClass.aProp = "This will work too!"
+// someService.notAMethod() //This gives you an idea why we can ge missingMethod Exceptions
+// someService.notAProperty
+// someService.metaClass.aMethod = {String s -> println s}
+//  someService.metaClass.static.aStaticMethod = {String s -> println s + ' statically!'}
+//  someService.metaClass.aProp = "This will work too!"
 
-//someService.aMethod('This will work.')
+// someService.aMethod('This will work.')
 // someService.aStaticMethod('This will work')
-//println someService.aProp
+// println someService.aProp
 
-//String.metaClass.encrypt = {
+// String.metaClass.encrypt = {
 //  "*** $delegate ***"
-//}
+// }
 
-//"test".encrypt()
+// println "test".encrypt()
 
-//println someService.metaClass.getMethods()
+// println someService.metaClass.getMethods()
 //someService.metaClass.getProperties().each{println it.getName()}
 // println someService.metaClass.hasProperty('solid')
 // println someService.metaClass.hasProperty('class')

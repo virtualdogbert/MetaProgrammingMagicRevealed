@@ -1,4 +1,5 @@
 //http://melix.github.io/blog/2015/03/sandboxing.html
+
 @Grab('de.sven-jacobs:loremipsum:1.0')
 import groovy.transform.CompileDynamic
 import groovy.transform.CompileStatic

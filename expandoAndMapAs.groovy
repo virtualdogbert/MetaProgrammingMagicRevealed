@@ -1,7 +1,7 @@
 //http://docs.groovy-lang.org/latest/html/documentation/#_expando
 
 class SomeService{
-	def SomeOtherService
+	def someOtherService
 // 	SomeOtherService someOtherService
 
 	def doSomething(String s){
@@ -21,11 +21,11 @@ def service = new SomeService()
 // service.someOtherService = new Expando()
 // service.someOtherService.runCheck = {true}
 
-//service.someOtherService.anotherMethod = {String s -> println "A differnt $s"}
-//service.someOtherService.anotherProp = "Another this will work too!"
+//  service.someOtherService.anotherMethod = {String s -> println "A differnt $s"}
+//  service.someOtherService.anotherProp = "Another this will work too!"
 
-//someService.anotherMethod('This will work.')
-//println someService.anotherProp
+//  service.someOtherService.anotherMethod('This will work.')
+//  println service.someOtherService.anotherProp
 
 // service.someOtherService = [runCheck: {true}] as SomeOtherService
 service.doSomething("programming")
